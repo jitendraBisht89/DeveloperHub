@@ -1,0 +1,44 @@
+﻿@model DeveloperHub.Models.User.UserProfileMapper
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/angular.min.js"></script>
+      <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/UserAccountJS/EmpList.js"></script>
+    <title>EmpList</title>
+  
+    
+</head>
+<body ng-app="myFormApp">
+    <div ng-controller="CustList">
+    <table border="1">
+        <tr>
+            <th>LastName</th>
+            <th>PhoneNumber</th>
+            <th>Address</th>
+            <th>UserName</th>
+            <th>Email</th>
+
+        </tr>
+        <tr>
+            <tr ng-repeat=" custs in cust">
+                         
+                      <td><span>{{custs.LastName}}</span></td>    
+                                      
+                      <td><span>{{custs.PhoneNumber}}</span></td>
+                      <td><span>{{custs.Address}}</span></td>
+                      <td><span>{{custs.UserName}}</span></td> 
+                      <td><span>{{custs.Email}}</span></td> 
+                </tr>             
+        </tr>
+    </table>
+        </div>
+</body>
+</html>
