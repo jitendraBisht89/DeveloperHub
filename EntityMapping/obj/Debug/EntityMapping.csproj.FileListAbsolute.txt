@@ -15,3 +15,10 @@ G:\C#BASICS\EntityDataBase\EntityMapping\obj\Debug\EntityMapping.csprojResolveAs
 G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\GridMvc.dll
 G:\C#BASICS\EntityDataBase\EntityMapping\obj\Debug\EntityMapping.Migrations.UserProfileProperty.resources
 G:\C#BASICS\EntityDataBase\EntityMapping\obj\Debug\EntityMapping.csproj.GenerateResource.Cache
+G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\Microsoft.CSharp.dll
+G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\System.ComponentModel.DataAnnotations.dll
+G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\System.Data.DataSetExtensions.dll
+G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\System.Data.dll
+G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\System.dll
+G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\System.Xml.dll
+G:\C#BASICS\EntityDataBase\EntityMapping\bin\Debug\System.Xml.Linq.dll

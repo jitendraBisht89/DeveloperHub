@@ -45,6 +45,13 @@ namespace DeveloperHub.Repositry
             return userPofileMapper;
 
         }
+        public int UpdateUserProfile(UserProfileMapper userProfile)
+        {
+            Mapper.CreateMap< DeveloperHub.Models.User.UserProfileMapper,EntityMapping.UserProfile>();
+            EntityMapping.UserProfile userList = Mapper.Map<UserProfileMapper,EntityMapping.UserProfile>(userProfile);
+            int status=  iEntityAccountData.UpdateUserProfile(userList);
+            return status;
+        }
     }
     #endregion
 }

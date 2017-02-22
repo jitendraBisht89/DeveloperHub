@@ -12,7 +12,7 @@ using EntityMapping;
 using System.Data.Entity.Infrastructure;
 namespace DeveloperHub.DataBaseIntiliazer
 {
-   /* [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+ [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
 public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
 {
     private static SimpleMembershipInitializer _initializer;
@@ -52,5 +52,5 @@ public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
         }
     }
 }
-    */
+   
 }

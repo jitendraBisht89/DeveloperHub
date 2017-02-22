@@ -10,6 +10,7 @@ using WebMatrix.WebData;
 using DeveloperHub.Models.User;
 using EntityMapping;
 using DeveloperHub.Repositry;
+using DeveloperHub.DataBaseIntiliazer;
 namespace DeveloperHub.Controllers
 {
     #region
@@ -20,9 +21,10 @@ namespace DeveloperHub.Controllers
         {
              iAccountData = new AccountData();
         }
+        [InitializeSimpleMembershipAttribute]
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
+          /*  WebSecurity.Logout();
            
             FormsAuthentication.SignOut();
             Session.Abandon();
@@ -30,7 +32,7 @@ namespace DeveloperHub.Controllers
             // clear authentication cookie
             HttpCookie cookie1 = new HttpCookie(FormsAuthentication.FormsCookieName, "");
             cookie1.Expires = DateTime.Now.AddYears(-1);
-            Response.Cookies.Add(cookie1);
+            Response.Cookies.Add(cookie1);*/
 
             // clear session cookie (not necessary for your current problem but i would recommend you do it anyway)
             //SessionStateSection sessionStateSection = (SessionStateSection)WebConfigurationManager.GetSection("system.web/sessionState");
@@ -88,7 +90,7 @@ namespace DeveloperHub.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
-         iAccountData.GetAllRegisterUsers();
+         //iAccountData.GetAllRegisterUsers();
             return View("Login");
         }
 
@@ -194,6 +196,12 @@ namespace DeveloperHub.Controllers
         {
             return View("EmpList");
         }
+        public JsonResult UpdateUserProfile(UserProfileMapper UserProfileMapper)
+        {
+           int status= iAccountData.UpdateUserProfile(UserProfileMapper);
+           return Json("test", JsonRequestBehavior.AllowGet);
+        }
+
     }
 
     #endregion

@@ -11,7 +11,7 @@ namespace EntityMapping.AccountData
     int GetUserIdByUserName(string userName);
     List<Users> GetAllRegisterUsers();
     Users GetUserProfiles(string userName, int id);
-    
+    int UpdateUserProfile(UserProfile userProfile);
     
     }
 }

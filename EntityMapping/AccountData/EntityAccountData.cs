@@ -35,6 +35,15 @@ namespace EntityMapping.AccountData
             return userProfile;
         }
 
+        public int UpdateUserProfile(UserProfile userProfile)
+        {
+
+            userProfile.AddedDate = DateTime.Now;
+            userProfile.ModifiedDate = DateTime.Now;
+            userDbContext.Userprofile.Add(userProfile);
+            userDbContext.SaveChanges();
+            return 0;
+        }
     }
     #endregion
 }

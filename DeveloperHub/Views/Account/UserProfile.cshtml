@@ -4,36 +4,41 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <script src="~/Scripts/angular.min.js"></script>
-      <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Script/angular.min.js"></script>
+      <script src="~/Script/angular-route.js"></script>
     <script src="~/UserAccountJS/EmpList.js"></script>
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<script src="~/Script/jquery-1.11.1.js"></script>
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+<link href="~/Content/Site.css" rel="stylesheet" />
     <title>EmpList</title>
   
     
 </head>
-<body ng-app="myFormApp">
-    <div ng-controller="CustList">
-    <table border="1">
-        <tr>
-            <th>LastName</th>
-            <th>PhoneNumber</th>
-            <th>Address</th>
-            <th>UserName</th>
-            <th>Email</th>
-
-        </tr>
-  
+    
+    <div class="container" ng-app="myFormApp">
+        <div ng-controller="updateProfile">
+        <form name="userProfile" ng-submit="updateProfile()">
+    <div class="logo col-sm-12 text-center col-md-12 ">
+        <img alt="" ng-src="UserProfileMapper.imgPath" />
+    </div>
+    
+    <table border="1"> 
             <tr>
-                         
-                      <td><span>{{custs.LastName}}</span></td>    
-                                      
-                      <td><span>{{custs.PhoneNumber}}</span></td>
-                      <td><span>{{custs.Address}}</span></td>
-                      <td><span>{{custs.UserName}}</span></td> 
-                      <td><span>{{custs.Email}}</span></td> 
-                </tr>             
-
+<td>ID</td><td><input type="text" ng-model="UserProfileMapper.Id" class="form-control"/ disabled></td></tr>
+<tr><td>UserName</td><td><input type="text" ng-model="UserProfileMapper.UserName" class="form-control" required /></td></tr>
+<tr><td>LastName</td><td><input type="text" ng-model="UserProfileMapper.LastName" class="form-control" required /></td></tr>
+<tr><td>PhoneNumber</td><td><input type="text" ng-model="UserProfileMapper.PhoneNumber" class="form-control" required/></td></tr>
+<tr><td>Email</td><td><input type="text" ng-model="UserProfileMapper.Email" class="form-control" required /></td></tr>                          
+<tr><td>Address</td><td><input type="text" ng-model="UserProfileMapper.Address"class="form-control" required /></td></tr>
+ <tr><td>Upload Profile Picture</td><td><input type="text" ng-model="UserProfileMapper.imgPath" required /></td></tr>
+ <tr><td><button type="submit" data-ng-disabled="userProfile.$invalid">Submit</button></td></tr>
     </table>
-        </div>
-</body>
-</html>
+           </form>
+            </div>
+        <a href="http://localhost:4650/Account/UpdateUserProfile">Clcik</a>
+        @Html.ActionLink("UpdateUserProfile","UpdateUserProfile","Account")
+        <
+</div>
+       

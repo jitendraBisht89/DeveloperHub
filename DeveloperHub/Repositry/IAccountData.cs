@@ -10,5 +10,6 @@ namespace DeveloperHub.Repositry
         int GetUserIdByUserName(string userName);
        List<UserProfileMapper> GetAllRegisterUsers();
        UserProfileMapper GetUserProfiles(string userName, int id);
+       int UpdateUserProfile(UserProfileMapper userProfile);
     }
 }

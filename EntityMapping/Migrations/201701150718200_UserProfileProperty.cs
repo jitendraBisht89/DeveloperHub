@@ -13,11 +13,7 @@ namespace EntityMapping.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserProfiles", "Id", "dbo.Users");
-            DropIndex("dbo.UserProfiles", new[] { "Id" });
-            DropTable("dbo.Users");
-            DropTable("dbo.UserProfiles");
-            DropColumn("dbo.UserProfiles", "UserProfiles");
+            DropColumn("dbo.UserProfiles", "imgPath");
         }
     }
 }
