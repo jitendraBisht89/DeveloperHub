@@ -13,13 +13,16 @@ namespace DeveloperHub.Controllers
         //
         // GET: /Home/
         
-        public ActionResult Index()
+        public ActionResult HomePage()
         {
-            return View();
+            string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
+            string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
+            return View(actionName);
         }
-        public ActionResult Login()
+        public ActionResult LoginLayOut()
         {
-            return View();
+            string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
+            return View(actionName);
         }
 
     }

@@ -22,7 +22,7 @@ namespace DeveloperHub.Controllers
              iAccountData = new AccountData();
         }
         [InitializeSimpleMembershipAttribute]
-        public ActionResult LogOff()
+        public ActionResult HomePage()
         {
           /*  WebSecurity.Logout();
            
@@ -36,9 +36,12 @@ namespace DeveloperHub.Controllers
 
             // clear session cookie (not necessary for your current problem but i would recommend you do it anyway)
             //SessionStateSection sessionStateSection = (SessionStateSection)WebConfigurationManager.GetSection("system.web/sessionState");
-           
+           //G:\C#BASICS\EntityDataBase\DeveloperHub\Views\Home\index.cshtml
 
-            Response.Redirect("~/Account/Login");
+           // Response.Redirect("");
+            string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
+            string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
+
             return View();
         }
         //

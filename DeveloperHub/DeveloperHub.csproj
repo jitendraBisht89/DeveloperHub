@@ -187,6 +187,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataBaseIntiliazer\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="GetControllerName\ControllerView.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -271,6 +272,18 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
+    <Content Include="login-sign-in\css\demo.css" />
+    <Content Include="login-sign-in\css\font-awesome.css" />
+    <Content Include="login-sign-in\css\style.css" />
+    <Content Include="login-sign-in\font\fontawesome-webfont.svg" />
+    <Content Include="login-sign-in\images\bg.jpg" />
+    <Content Include="login-sign-in\images\bg2.jpg" />
+    <Content Include="login-sign-in\images\bg3.jpg" />
+    <Content Include="login-sign-in\images\blurred.jpg" />
+    <Content Include="login-sign-in\images\noise.png" />
+    <Content Include="login-sign-in\images\wood_pattern.jpg" />
+    <Content Include="login-sign-in\js\jquery.placeholder.min.js" />
+    <Content Include="login-sign-in\js\modernizr.custom.63321.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -286,6 +299,11 @@
     <Content Include="Grid.mvc.readme" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="login-sign-in\css\.DS_Store" />
+    <Content Include="login-sign-in\font\fontawesome-webfont.eot" />
+    <Content Include="login-sign-in\font\fontawesome-webfont.ttf" />
+    <Content Include="login-sign-in\font\fontawesome-webfont.woff" />
+    <Content Include="login-sign-in\images\.DS_Store" />
     <None Include="Properties\PublishProfiles\DeveloperHub - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\DeveloperHub - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
@@ -338,7 +356,90 @@
     <Content Include="Script\npm.js" />
     <Content Include="Script\webGrid.js" />
     <Content Include="Script\_references.js" />
+    <Content Include="TemplateFIles\css\LoginCss.txt" />
+    <Content Include="TemplateFIles\css\mobile.css" />
+    <Content Include="TemplateFIles\css\style.css" />
+    <Content Include="TemplateFIles\fonts\lato-regular-webfont.svg" />
+    <Content Include="TemplateFIles\fonts\nixieone-regular-webfont.svg" />
+    <Content Include="TemplateFIles\images\bg-adbox.png" />
+    <Content Include="TemplateFIles\images\bg-body.jpg" />
+    <Content Include="TemplateFIles\images\bg-box.png" />
+    <Content Include="TemplateFIles\images\bg-foodDetail.png" />
+    <Content Include="TemplateFIles\images\bg-foodInfos.png" />
+    <Content Include="TemplateFIles\images\bg-menu.png" />
+    <Content Include="TemplateFIles\images\bg-navigation.png" />
+    <Content Include="TemplateFIles\images\bg-pattern.jpg" />
+    <Content Include="TemplateFIles\images\bg-separator.png" />
+    <Content Include="TemplateFIles\images\btn-send.png" />
+    <Content Include="TemplateFIles\images\buffet.jpg" />
+    <Content Include="TemplateFIles\images\content-box.png" />
+    <Content Include="TemplateFIles\images\deluxe.jpg" />
+    <Content Include="TemplateFIles\images\desserts.jpg" />
+    <Content Include="TemplateFIles\images\dive-site.png" />
+    <Content Include="TemplateFIles\images\first-class.jpg" />
+    <Content Include="TemplateFIles\images\food.png" />
+    <Content Include="TemplateFIles\images\group-yoga.jpg" />
+    <Content Include="TemplateFIles\images\icon-facebook.png" />
+    <Content Include="TemplateFIles\images\icon-googleplus.png" />
+    <Content Include="TemplateFIles\images\icon-pinterest.png" />
+    <Content Include="TemplateFIles\images\icon-twitter.png" />
+    <Content Include="TemplateFIles\images\icons.png" />
+    <Content Include="TemplateFIles\images\instructor1.jpg" />
+    <Content Include="TemplateFIles\images\instructor2.jpg" />
+    <Content Include="TemplateFIles\images\instructor3.jpg" />
+    <Content Include="TemplateFIles\images\instructor4.jpg" />
+    <Content Include="TemplateFIles\images\kayak.jpg" />
+    <Content Include="TemplateFIles\images\lady-in-yoga.jpg" />
+    <Content Include="TemplateFIles\images\logo.png" />
+    <Content Include="TemplateFIles\images\lying-yoga.jpg" />
+    <Content Include="TemplateFIles\images\lying-yoga2.jpg" />
+    <Content Include="TemplateFIles\images\mobile\bg-mobile.png" />
+    <Content Include="TemplateFIles\images\mobile\mobile-close.png" />
+    <Content Include="TemplateFIles\images\mobile\mobile-collapse.png" />
+    <Content Include="TemplateFIles\images\mobile\mobile-expand.png" />
+    <Content Include="TemplateFIles\images\mobile\mobile-menu.png" />
+    <Content Include="TemplateFIles\images\reef1.jpg" />
+    <Content Include="TemplateFIles\images\reef2.jpg" />
+    <Content Include="TemplateFIles\images\reef3.jpg" />
+    <Content Include="TemplateFIles\images\rooms.png" />
+    <Content Include="TemplateFIles\images\sea-sound.jpg" />
+    <Content Include="TemplateFIles\images\seafoods.jpg" />
+    <Content Include="TemplateFIles\images\searchbar.png" />
+    <Content Include="TemplateFIles\images\suite.jpg" />
+    <Content Include="TemplateFIles\images\yoga-concentrating.jpg" />
+    <Content Include="TemplateFIles\js\function.js" />
+    <Content Include="TemplateFIles\js\jquery-1.11.1.min.js" />
+    <Content Include="TemplateFIles\js\mobile.js" />
+    <Content Include="TemplateFIles\license\terms-of-use.txt" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\lato-regular-webfont.svg" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\nixieone-regular-webfont.svg" />
     <Content Include="UserAccountJS\EmpList.js" />
+    <Content Include="TemplateFIles\fonts\lato-regular-webfont.eot" />
+    <Content Include="TemplateFIles\fonts\lato-regular-webfont.ttf" />
+    <Content Include="TemplateFIles\fonts\lato-regular-webfont.woff" />
+    <Content Include="TemplateFIles\fonts\nixieone-regular-webfont.eot" />
+    <Content Include="TemplateFIles\fonts\nixieone-regular-webfont.ttf" />
+    <Content Include="TemplateFIles\fonts\nixieone-regular-webfont.woff" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\lato-regular-webfont.eot" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\lato-regular-webfont.ttf" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\lato-regular-webfont.woff" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\nixieone-regular-webfont.eot" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\nixieone-regular-webfont.ttf" />
+    <Content Include="TemplateFIles\source-for-web-designers\fonts\nixieone-regular-webfont.woff" />
+    <Content Include="TemplateFIles\source-for-web-designers\rehabilitation-yoga-website-template.psd" />
+    <Content Include="Views\Home\beachresort.psd" />
+    <Content Include="Views\Home\LoginLayOut.cshtml" />
+    <None Include="Views\Home\blog.cshtml" />
+    <None Include="Views\Home\classes.cshtml" />
+    <None Include="Views\Home\instructors.cshtml" />
+    <None Include="Views\Home\singlepost.cshtml" />
+    <None Include="Views\Home\about.cshtml" />
+    <None Include="Views\Home\contact.cshtml" />
+    <None Include="Views\Home\dives.cshtml" />
+    <None Include="Views\Home\foods.cshtml" />
+    <None Include="Views\Home\HomePage.cshtml" />
+    <None Include="Views\Home\news.cshtml" />
+    <None Include="Views\Home\rooms.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -363,15 +464,19 @@
     <Content Include="Views\Account\UserProfile.cshtml" />
     <Content Include="Views\Account\EmpList.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\View1.cshtml" />
+    <Content Include="Views\Shared\LoginFormLayOut.cshtml" />
+    <Content Include="Views\Shared\_CommonLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\FacceBookButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml.cshtml" />
