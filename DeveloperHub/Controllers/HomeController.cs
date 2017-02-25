@@ -17,12 +17,12 @@ namespace DeveloperHub.Controllers
         {
             string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
             string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
-            return View(actionName);
+            return View("~/Views/Home/HomePage.cshtml");
         }
         public ActionResult LoginLayOut()
         {
             string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
-            return View(actionName);
+            return View("~/Views/Home/HomePage.cshtml");
         }
 
     }
