@@ -32,9 +32,11 @@ a {
 }
 
 .main {
-	width: 90%;
+	width: 600%;
+    height:500px;
 	margin: 0 auto;
 	position: relative;
+    background-color:red;
 }
 
 .container > header {
