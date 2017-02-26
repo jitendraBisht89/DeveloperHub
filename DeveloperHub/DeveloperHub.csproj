@@ -467,6 +467,7 @@
     <Content Include="Views\Home\View1.cshtml" />
     <Content Include="Views\Shared\LoginFormLayOut.cshtml" />
     <Content Include="Views\Shared\_CommonLayout.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
