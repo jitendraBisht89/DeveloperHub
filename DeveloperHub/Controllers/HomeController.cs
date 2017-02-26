@@ -17,7 +17,7 @@ namespace DeveloperHub.Controllers
         {
             string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
             string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
-            return View();
+            return View("~/Views/Home/LoginLayOut.cshtml");
         }
         public ActionResult LoginLayOut()
         {

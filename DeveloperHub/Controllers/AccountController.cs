@@ -22,7 +22,7 @@ namespace DeveloperHub.Controllers
              iAccountData = new AccountData();
         }
         [InitializeSimpleMembershipAttribute]
-        public ActionResult HomePage()
+        public ActionResult Ho()
         {
           /*  WebSecurity.Logout();
            
