@@ -61,6 +61,7 @@ namespace DeveloperHub.Controllers
         {
             return View();
         }
+        //This register commit with user
         [HttpGet]
         [AllowAnonymous]
         public ActionResult Register()
