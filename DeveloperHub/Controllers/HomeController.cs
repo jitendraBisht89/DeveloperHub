@@ -22,7 +22,7 @@ namespace DeveloperHub.Controllers
         public ActionResult LoginLayOut()
         {
             string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
-            return View("~/Views/Home/LoginLayOut.cshtml");
+            return View("~/Views/Home/HomePage.cshtml");
         }
 
     }
