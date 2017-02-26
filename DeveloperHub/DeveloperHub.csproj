@@ -431,13 +431,13 @@
     <Content Include="Views\Home\LoginLayOut.cshtml" />
     <None Include="Views\Home\blog.cshtml" />
     <None Include="Views\Home\classes.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
     <None Include="Views\Home\instructors.cshtml" />
     <None Include="Views\Home\singlepost.cshtml" />
     <None Include="Views\Home\about.cshtml" />
     <None Include="Views\Home\contact.cshtml" />
     <None Include="Views\Home\dives.cshtml" />
     <None Include="Views\Home\foods.cshtml" />
-    <None Include="Views\Home\HomePage.cshtml" />
     <None Include="Views\Home\news.cshtml" />
     <None Include="Views\Home\rooms.cshtml" />
     <Content Include="Web.config" />
