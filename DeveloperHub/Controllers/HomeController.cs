@@ -7,6 +7,7 @@ using DeveloperHub.DataBaseIntiliazer;
 
 namespace DeveloperHub.Controllers
 {
+    //Comment Intialize
    // [InitializeSimpleMembershipAttribute]
     public class HomeController : Controller
     {
@@ -17,7 +18,7 @@ namespace DeveloperHub.Controllers
         {
             string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
             string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
-            
+            //Hello this just test
             return View();
         }
         public ActionResult LoginLayOut()
