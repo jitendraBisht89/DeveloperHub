@@ -55,17 +55,11 @@ namespace DeveloperHub.Controllers
             return Json(new { success = true });
            
         }
-
-        [Authorize]
-        public ActionResult Index()
-        {
-            return View();
-        }
-        //This register commit with user
         [HttpGet]
         [AllowAnonymous]
         public ActionResult Register()
         {
+            //This is register View
             return View();
         }
 
