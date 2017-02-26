@@ -11,7 +11,7 @@ namespace DeveloperHub.Controllers
     public class HomeController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Home/Command
         
         public ActionResult HomePage()
         {
