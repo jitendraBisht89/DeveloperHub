@@ -202,6 +202,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositry\AccountData.cs" />
     <Compile Include="Repositry\IAccountData.cs" />
+    <Compile Include="SendMail\EncryptionDecryption.cs" />
+    <Compile Include="SendMail\NewUserSendMail.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -502,6 +504,7 @@
     <Content Include="TemplateFIles\source-for-web-designers\rehabilitation-yoga-website-template.psd" />
     <Content Include="Views\Home\beachresort.psd" />
     <Content Include="Views\Home\LoginLayOut.cshtml" />
+    <Content Include="Views\Account\UnBlockUser.cshtml" />
     <None Include="Views\Home\blog.cshtml" />
     <None Include="Views\Home\classes.cshtml" />
     <Content Include="Views\Home\HomePage.cshtml" />

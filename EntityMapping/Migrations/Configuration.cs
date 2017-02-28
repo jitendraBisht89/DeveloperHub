@@ -1,4 +1,4 @@
-namespace EntityMapping.Migrations
+/*namespace EntityMapping.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -29,3 +29,4 @@ namespace EntityMapping.Migrations
         }
     }
 }
+*/

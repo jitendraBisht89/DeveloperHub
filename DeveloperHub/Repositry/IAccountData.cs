@@ -11,5 +11,6 @@ namespace DeveloperHub.Repositry
        List<UserProfileMapper> GetAllRegisterUsers();
        UserProfileMapper GetUserProfiles(string userName, int id);
        int UpdateUserProfile(UserProfileMapper userProfile);
+       void UnBlockUser();
     }
 }

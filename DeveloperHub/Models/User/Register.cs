@@ -7,10 +7,6 @@ namespace DeveloperHub.Models
 {
     public class Register
     {
-        [Required(ErrorMessage = "Full Name can not be blank")]
-        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Invalid first  Name")]
-        public string FullName { get; set; }
-
         [Required(ErrorMessage = "User Name can not be blank")]
         [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Invalid User  Name")]
         [System.Web.Mvc.Remote("CheckUserNameExists", "Account", ErrorMessage = "Username already exists!")]

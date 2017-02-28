@@ -13,6 +13,8 @@ namespace EntityMapping
       public UserDbContext userDbContext;
       public UserDbContext(): base("Db")
       {
+         //System.Data.Entity.Database.SetInitializer<UserDbContext>(null);
+          
          
       }
         public DbSet<Users> Users { set; get; }

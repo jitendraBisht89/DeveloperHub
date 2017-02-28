@@ -52,6 +52,9 @@ namespace DeveloperHub.Repositry
             int status=  iEntityAccountData.UpdateUserProfile(userList);
             return status;
         }
+       public void UnBlockUser()
+        {
+        }
     }
     #endregion
 }

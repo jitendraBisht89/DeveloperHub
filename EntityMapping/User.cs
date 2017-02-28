@@ -11,6 +11,7 @@ namespace EntityMapping
     {
         public string UserName { set; get; }
         public string Email { set; get; }
-        public  UserProfile UserProfile { get; set; }  
+        public  UserProfile UserProfile { get; set; }
+        public bool status { set; get; }
     }
 }

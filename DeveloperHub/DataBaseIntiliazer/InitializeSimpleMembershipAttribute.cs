@@ -21,6 +21,7 @@ public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
         
     public override void OnActionExecuting(ActionExecutingContext filterContext)
     {
+       
         // Ensure ASP.NET Simple Membership is initialized only once per app start
         LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
     }
@@ -29,13 +30,14 @@ public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
     {
         public SimpleMembershipInitializer()
         {
-           
-           System.Data.Entity.Database.SetInitializer<DB>(null);
+
+            System.Data.Entity.Database.SetInitializer<UserDbContext>(null);
 
             try
             {
-                using (var context = new DB())
+                using (var context = new UserDbContext())
                 {
+                    
                     if (!context.Database.Exists())
                     {
                         // Create the SimpleMembership database without Entity Framework migration schema
@@ -44,6 +46,8 @@ public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
                 }
 
                 WebSecurity.InitializeDatabaseConnection("Db", "Users", "Id", "UserName", autoCreateTables: true);
+                int k = WebSecurity.GetUserId("jeet");
+
             }
             catch (Exception ex)
             {

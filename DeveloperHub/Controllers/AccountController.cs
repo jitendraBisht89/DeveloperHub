@@ -11,6 +11,7 @@ using DeveloperHub.Models.User;
 using EntityMapping;
 using DeveloperHub.Repositry;
 using DeveloperHub.DataBaseIntiliazer;
+using ShareBook.Models;
 namespace DeveloperHub.Controllers
 {
     #region
@@ -74,8 +75,9 @@ namespace DeveloperHub.Controllers
                     if (!WebSecurity.UserExists(register.username))
                     {
                         WebSecurity.CreateUserAndAccount(register.username,register.password,
-                            new { FullName = register.FullName, Email = register.EmailID, AddedDate = DateTime.Now, ModifiedDate=DateTime.Now});
-                        return View("Login");
+                            new {Email = register.EmailID, AddedDate = DateTime.Now, ModifiedDate=DateTime.Now,Status=false});
+                            ShareBook.Models.NewUserSendMail.SendMail(register.EmailID, "key@123");
+                            return View("~/Views/Account/UnBlockUser.cshtml");
 
                     }
 
@@ -199,7 +201,11 @@ namespace DeveloperHub.Controllers
            int status= iAccountData.UpdateUserProfile(UserProfileMapper);
            return Json("test", JsonRequestBehavior.AllowGet);
         }
-
+        public ActionResult UnBlockUser(string cypertext)
+        {
+            string email = EncryptionDecryption.Decrypt(cypertext, "key@123");
+            return Content(email);
+        }
     }
 
     #endregion

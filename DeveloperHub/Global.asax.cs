@@ -19,7 +19,7 @@ namespace DeveloperHub
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-           // WebSecurity.InitializeDatabaseConnection("Db", "Users", "Id", "UserName", autoCreateTables: true);
+            WebSecurity.InitializeDatabaseConnection("Db", "Users", "Id", "UserName", autoCreateTables: true);
         }
     }
 }

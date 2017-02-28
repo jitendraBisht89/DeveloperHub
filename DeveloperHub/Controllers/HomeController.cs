@@ -4,18 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DeveloperHub.DataBaseIntiliazer;
-
+using EntityMapping;
+using WebMatrix.WebData;
+using System.Web.Security;
 namespace DeveloperHub.Controllers
 {
     //Comment Intialize
-   // [InitializeSimpleMembershipAttribute]
+   
     public class HomeController : Controller
     {
         //
         // GET: /Home/Command
-        
         public ActionResult HomePage()
         {
+            int k = WebSecurity.GetUserId("JeetSingh");
             string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
             string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
             //Hello this just test

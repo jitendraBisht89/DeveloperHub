@@ -44,6 +44,10 @@ namespace EntityMapping.AccountData
             userDbContext.SaveChanges();
             return 0;
         }
+        public bool EnableUser()
+        {
+            return false;
+        }
     }
     #endregion
 }

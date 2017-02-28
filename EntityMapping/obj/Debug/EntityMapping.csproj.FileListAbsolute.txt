@@ -42,7 +42,7 @@ G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\bin\Debug\EntityFramework.Sql
 G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\bin\Debug\WebMatrix.Data.xml
 G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\bin\Debug\WebMatrix.WebData.xml
 G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\obj\Debug\EntityMapping.csprojResolveAssemblyReference.cache
-G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\obj\Debug\EntityMapping.Migrations.UserProfileProperty.resources
 G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\obj\Debug\EntityMapping.csproj.GenerateResource.Cache
 G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\obj\Debug\EntityMapping.dll
 G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\obj\Debug\EntityMapping.pdb
+G:\C#BASICS\MainProject\DeveloperHub\EntityMapping\obj\Debug\EntityMapping.Migrations.201701150718200_UserProfileProperty.resources
