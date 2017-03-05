@@ -312,6 +312,9 @@ namespace DeveloperHub.Controllers
            
             return View();
         }
+        public void Test()
+        {
+    }
 
     }
    
