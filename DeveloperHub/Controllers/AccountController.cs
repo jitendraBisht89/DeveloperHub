@@ -12,6 +12,7 @@ using EntityMapping;
 using DeveloperHub.Repositry;
 using DeveloperHub.DataBaseIntiliazer;
 using ShareBook.Models;
+using System.Web.Script.Serialization;
 namespace DeveloperHub.Controllers
 {
     #region
@@ -113,15 +114,7 @@ namespace DeveloperHub.Controllers
                     }
 
                 }
-                if(string.IsNullOrEmpty(userInRole))
-                {
-                    ModelState.AddModelError("Error", "Rights to User are not Provide Contact to Admin");
-                   
-                        return View("Login");                    
-
-                }
-                else
-                {
+                
                     Session["Name"]=login.UserName;
                     Session["UserId"]=userId;
                     Session["LoginType"] = userInRole;
@@ -134,7 +127,7 @@ namespace DeveloperHub.Controllers
                     {
                          return RedirectToAction("UserDashboard", "Dashboard");
                     }
-                }
+                
 
 
             }
@@ -206,7 +199,122 @@ namespace DeveloperHub.Controllers
             string email = EncryptionDecryption.Decrypt(cypertext, "key@123");
             return Content(email);
         }
+        public JsonResult LoginWithGoogle(GoogleAccessToken gooleUser)
+        {
+            if (!string.IsNullOrEmpty(gooleUser.Email) && !string.IsNullOrEmpty(gooleUser.AccessToken))
+            {
+                if (!WebSecurity.UserExists(gooleUser.UserName))
+                {
+                    try
+                    {
+                        WebSecurity.CreateUserAndAccount(gooleUser.UserName,null,
+                        new { Email = gooleUser.UserName, AddedDate = DateTime.Now, ModifiedDate = DateTime.Now, Status = false });
+                    }
+                    catch(Exception e)
+                    {
+                    }
+                    int userId = iAccountData.GetUserIdByUserName(gooleUser.UserName);
+                    string[] userRole = Roles.GetRolesForUser(gooleUser.UserName);
+                    string userInRole = "";
+                    foreach (string getAdminRoles in userRole)
+                    {
+                        if (getAdminRoles.Equals("Admin"))
+                        {
+                            userInRole = getAdminRoles;
+                        }
+
+                    }
+                    if (string.IsNullOrEmpty(userInRole))
+                    {
+                        ModelState.AddModelError("Error", "Rights to User are not Provide Contact to Admin");
+
+                        Session["Name"] = gooleUser.UserName;
+                        Session["UserId"] = userId;
+                        Session["LoginType"] = userInRole;
+
+                        if (userInRole.Equals("Admin"))
+                        {
+                           // return RedirectToAction("AdminDashboard", "Dashboard");
+                        }
+                        else
+                        {
+                            //return RedirectToAction("UserDashboard", "Dashboard");
+                        }
+                    }
+                   
+                }
+            }
+            if(!string.IsNullOrEmpty(gooleUser.Email) && !string.IsNullOrEmpty(gooleUser.AccessToken))
+            {
+                if (WebSecurity.UserExists(gooleUser.UserName))
+                {
+                    int userId = iAccountData.GetUserIdByUserName(gooleUser.UserName);
+                    string[] userRole = Roles.GetRolesForUser(gooleUser.UserName);
+                    string userInRole = "";
+                    foreach (string getAdminRoles in userRole)
+                    {
+                        if (getAdminRoles.Equals("Admin"))
+                        {
+                            userInRole = getAdminRoles;
+                        }
+
+                    }
+                    if (string.IsNullOrEmpty(userInRole))
+                    {
+                        Session["Name"] = gooleUser.UserName;
+                        Session["UserId"] = userId;
+                        Session["LoginType"] = userInRole;
+
+                        if (userInRole.Equals("Admin"))
+                        {
+                            return Json("ok", JsonRequestBehavior.AllowGet);
+                        }
+                        else
+                        {
+                            return Json("ok", JsonRequestBehavior.AllowGet);
+                        }
+
+                    }
+                }
+            }
+            return Json("false",JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GoogleSuccessLogin()
+        {
+            string userName = Session["Name"].ToString();
+            string userRole = iAccountData.GetUserInRole(userName);
+            if (string.IsNullOrEmpty(userRole))
+            {
+                Roles.CreateRole("SystemUser");
+                Roles.AddUserToRole(userName, "SystemUser");
+
+            }
+            
+                string userInRole = "";
+                string[] userRoless = Roles.GetRolesForUser(userName);
+                foreach (string getAdminRoles in userRoless)
+                {
+                    if (getAdminRoles.Equals("Admin"))
+                    {
+                        userInRole = getAdminRoles;
+                    }
+                }
+                    if (userInRole.Equals("Admin"))
+                    {
+                        return RedirectToAction("AdminDashboard", "Dashboard");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Test","Dashboard");
+                    }
+
+           
+            return View();
+        }
+
     }
+   
 
     #endregion
 }

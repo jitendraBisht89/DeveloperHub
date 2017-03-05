@@ -28,10 +28,6 @@ namespace DeveloperHub.Controllers
             string actionName = this.ControllerContext.RouteData.Values["action"].ToString();
             return View("~/Views/Home/LoginLayOut.cshtml");
         }
-        public ActionResult Test()
-        {
-            return View();
-                
-        }
+       
     }
 }

@@ -6,6 +6,8 @@ using EntityMapping.AccountData;
 using DeveloperHub.Models.User;
 using AutoMapper;
 using EntityMapping;
+using System.Data.SqlClient;
+using System.Configuration;
 namespace DeveloperHub.Repositry
 {
     #region
@@ -55,6 +57,23 @@ namespace DeveloperHub.Repositry
        public void UnBlockUser()
         {
         }
+       public string GetUserInRole(string  userName) 
+       {
+           string userRole = "";
+           SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Db"].ToString());
+           con.Open();
+           SqlCommand cmd = new SqlCommand("select RoleName from webpages_Roles, webpages_UsersInRoles where UserId=@UserId and RoleName='SystemUser'", con);
+           cmd.Parameters.AddWithValue("@UserId", GetUserIdByUserName(userName));
+           SqlDataReader sdr = cmd.ExecuteReader();
+           while (sdr.Read())
+           {
+               userRole = sdr["RoleName"].ToString();
+           }
+           con.Close();
+           return userRole;
+       }
+
+       
     }
     #endregion
 }

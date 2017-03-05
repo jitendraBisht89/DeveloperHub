@@ -7,7 +7,11 @@
      <link rel="stylesheet" type="text/css" href="~/login-sign-in/css/style.css" />
     <link rel="stylesheet" type="text/css" href="~/TemplateFIles/css/style.css" />
         <script src="~/login-sign-in/js/modernizr.custom.63321.js"></script>
-
+     <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="10403398949-splovvmf46ji33ngb15htia6pdf2vfbp.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="~/GooleJS/LoginWithGoogle.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 </head>
 <body>
     <div>
@@ -46,6 +50,14 @@
             <div style="margin-left:-100px;margin-top:-174px">
                 <br />
         @RenderBody()
+                <div id="fb-root"></div>
+    <script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/Facebook.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            InitialiseFacebook(@System.Configuration.ConfigurationManager.AppSettings["app_Id"]);
+        });
+	</script>
                 </div>
     </div>
 </body>
