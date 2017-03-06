@@ -10,7 +10,7 @@ using System.Web.Security;
 namespace DeveloperHub.Controllers
 {
     //Comment Intialize
-   
+   //Stating of Database
     public class HomeController : Controller
     {
         //
