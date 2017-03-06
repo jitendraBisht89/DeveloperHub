@@ -104,6 +104,7 @@ namespace DeveloperHub.Controllers
             {
                 bool validUser = WebSecurity.Login(login.UserName, login.Password);
                 int userId = iAccountData.GetUserIdByUserName(login.UserName);
+               // Roles.AddUserToRole(login.UserName, "SystemUser");
                 string[] userRole = Roles.GetRolesForUser(login.UserName);
                 string userInRole="";
                 foreach (string getAdminRoles in userRole)
